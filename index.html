@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Make N Solver v1.2.1</h1>
+<h1>Make N Solver v1.2.2</h1>
 <script>
-const nums = prompt("type nums and ans:").trim().split(" ");
+const nums = prompt("Type nums and ans: ex) 1 2 3 4 10").trim().split(" ");
 const first = Number(nums[0]);
 const second = Number(nums[1]);
 const third = Number(nums[2]);
@@ -147,8 +147,9 @@ for (let i = 1; i < 25; i++) {
 }
 
 if (!nans) {
-  document.write("Nothing");
+  document.write("Nothing<br>");
 }
+document.write("Thanks for using.<br>");
 </script>
 </body>
 </html>
