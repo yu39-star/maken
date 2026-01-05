@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 <body>
 <script>
-const nums = prompt("type nums and ans: ex) 1 2 3 4 10").trim().split(" ");
+const nums = prompt("type nums and ans:").trim().split(" ");
 const first = Number(nums[0]);
 const second = Number(nums[1]);
 const third = Number(nums[2]);
@@ -9,6 +10,7 @@ const forth = Number(nums[3]);
 const ans = Number(nums[4]);
 
 const numbers = [first, second, third, forth];
+
 document.write(
   "I'm trying to make " +
   Math.trunc(ans) +
@@ -19,6 +21,10 @@ document.write(
   Math.trunc(forth) + ".<br>"
 );
 
+document.write("Answers:<br>");
+
+let nans = false;
+
 for (let i = 1; i < 25; i++) {
   let iti, ni, san, yon, next;
 
@@ -28,25 +34,16 @@ for (let i = 1; i < 25; i++) {
 
     if (next > 4) {
       ni = numbers[2];
-      if (next % 2 === 1) {
-        san = numbers[0]; yon = numbers[1];
-      } else {
-        san = numbers[1]; yon = numbers[0];
-      }
+      if (next % 2 === 1) { san = numbers[0]; yon = numbers[1]; }
+      else { san = numbers[1]; yon = numbers[0]; }
     } else if (next > 2) {
       ni = numbers[1];
-      if (next % 2 === 1) {
-        san = numbers[0]; yon = numbers[2];
-      } else {
-        san = numbers[2]; yon = numbers[0];
-      }
+      if (next % 2 === 1) { san = numbers[0]; yon = numbers[2]; }
+      else { san = numbers[2]; yon = numbers[0]; }
     } else {
       ni = numbers[0];
-      if (next % 2 === 1) {
-        san = numbers[1]; yon = numbers[2];
-      } else {
-        san = numbers[2]; yon = numbers[1];
-      }
+      if (next % 2 === 1) { san = numbers[1]; yon = numbers[2]; }
+      else { san = numbers[2]; yon = numbers[1]; }
     }
 
   } else if (i > 12) {
@@ -55,25 +52,16 @@ for (let i = 1; i < 25; i++) {
 
     if (next > 4) {
       ni = numbers[3];
-      if (next % 2 === 1) {
-        san = numbers[0]; yon = numbers[1];
-      } else {
-        san = numbers[1]; yon = numbers[0];
-      }
+      if (next % 2 === 1) { san = numbers[0]; yon = numbers[1]; }
+      else { san = numbers[1]; yon = numbers[0]; }
     } else if (next > 2) {
       ni = numbers[1];
-      if (next % 2 === 1) {
-        san = numbers[0]; yon = numbers[3];
-      } else {
-        san = numbers[3]; yon = numbers[0];
-      }
+      if (next % 2 === 1) { san = numbers[0]; yon = numbers[3]; }
+      else { san = numbers[3]; yon = numbers[0]; }
     } else {
       ni = numbers[0];
-      if (next % 2 === 1) {
-        san = numbers[1]; yon = numbers[3];
-      } else {
-        san = numbers[3]; yon = numbers[1];
-      }
+      if (next % 2 === 1) { san = numbers[1]; yon = numbers[3]; }
+      else { san = numbers[3]; yon = numbers[1]; }
     }
 
   } else if (i > 6) {
@@ -82,25 +70,16 @@ for (let i = 1; i < 25; i++) {
 
     if (next > 4) {
       ni = numbers[3];
-      if (next % 2 === 1) {
-        san = numbers[0]; yon = numbers[2];
-      } else {
-        san = numbers[2]; yon = numbers[0];
-      }
+      if (next % 2 === 1) { san = numbers[0]; yon = numbers[2]; }
+      else { san = numbers[2]; yon = numbers[0]; }
     } else if (next > 2) {
       ni = numbers[2];
-      if (next % 2 === 1) {
-        san = numbers[0]; yon = numbers[3];
-      } else {
-        san = numbers[3]; yon = numbers[0];
-      }
+      if (next % 2 === 1) { san = numbers[0]; yon = numbers[3]; }
+      else { san = numbers[3]; yon = numbers[0]; }
     } else {
       ni = numbers[0];
-      if (next % 2 === 1) {
-        san = numbers[2]; yon = numbers[3];
-      } else {
-        san = numbers[3]; yon = numbers[2];
-      }
+      if (next % 2 === 1) { san = numbers[2]; yon = numbers[3]; }
+      else { san = numbers[3]; yon = numbers[2]; }
     }
 
   } else {
@@ -109,25 +88,16 @@ for (let i = 1; i < 25; i++) {
 
     if (next > 4) {
       ni = numbers[3];
-      if (next % 2 === 1) {
-        san = numbers[1]; yon = numbers[2];
-      } else {
-        san = numbers[2]; yon = numbers[1];
-      }
+      if (next % 2 === 1) { san = numbers[1]; yon = numbers[2]; }
+      else { san = numbers[2]; yon = numbers[1]; }
     } else if (next > 2) {
       ni = numbers[2];
-      if (next % 2 === 1) {
-        san = numbers[1]; yon = numbers[3];
-      } else {
-        san = numbers[3]; yon = numbers[1];
-      }
+      if (next % 2 === 1) { san = numbers[1]; yon = numbers[3]; }
+      else { san = numbers[3]; yon = numbers[1]; }
     } else {
       ni = numbers[1];
-      if (next % 2 === 1) {
-        san = numbers[2]; yon = numbers[3];
-      } else {
-        san = numbers[3]; yon = numbers[2];
-      }
+      if (next % 2 === 1) { san = numbers[2]; yon = numbers[3]; }
+      else { san = numbers[3]; yon = numbers[2]; }
     }
   }
 
@@ -158,6 +128,7 @@ for (let i = 1; i < 25; i++) {
     }
     if (Math.abs(value - ans) < 1e-6) {
       document.write(`( ( ${iti|0} ${ikko} ${ni|0} ) ${niko} ${san|0} ) ${sanko} ${yon|0}<br>`);
+      nans = true;
     }
 
     try {
@@ -169,8 +140,13 @@ for (let i = 1; i < 25; i++) {
     }
     if (Math.abs(value - ans) < 1e-6) {
       document.write(`( ${iti|0} ${ikko} ${ni|0} ) ${niko} ( ${san|0} ${sanko} ${yon|0} )<br>`);
+      nans = true;
     }
   }
+}
+
+if (!nans) {
+  document.write("Nothing");
 }
 </script>
 </body>
