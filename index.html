@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Make N Solver v1.2.2</h1>
+<h1>Make N Solver v1.3.0</h1>
 <script>
 const nums = prompt("Type nums and ans: ex) 1 2 3 4 10").trim().split(" ");
 const first = Number(nums[0]);
@@ -9,8 +9,10 @@ const second = Number(nums[1]);
 const third = Number(nums[2]);
 const forth = Number(nums[3]);
 const ans = Number(nums[4]);
-
 const numbers = [first, second, third, forth];
+
+let kotaetati = [];
+let atta = false;
 
 document.write(
   "I'm trying to make " +
@@ -128,8 +130,14 @@ for (let i = 1; i < 25; i++) {
       continue;
     }
     if (Math.abs(value - ans) < 1e-6) {
-      document.write(`( ( ${iti|0} ${ikko} ${ni|0} ) ${niko} ${san|0} ) ${sanko} ${yon|0}<br>`);
-      nans = true;
+      const kotae = `( ( ${iti|0} ${ikko} ${ni|0} ) ${niko} ${san|0} ) ${sanko} ${yon|0}`;
+      atta = kotaetati.includes(kotae);
+      if (!atta) {
+        kotaetati.push(kotae);
+        document.write(kotae + "<br>");
+        nans = true;
+      }
+      atta = false;
     }
 
     try {
@@ -140,8 +148,14 @@ for (let i = 1; i < 25; i++) {
       continue;
     }
     if (Math.abs(value - ans) < 1e-6) {
-      document.write(`( ${iti|0} ${ikko} ${ni|0} ) ${niko} ( ${san|0} ${sanko} ${yon|0} )<br>`);
-      nans = true;
+      const kotae = `( ${iti|0} ${ikko} ${ni|0} ) ${niko} ( ${san|0} ${sanko} ${yon|0} )`;
+      atta = kotaetati.includes(kotae);
+      if (!atta) {
+        kotaetati.push(kotae);
+        document.write(kotae + "<br>");
+        nans = true;
+      }
+      atta = false;
     }
   }
 }
