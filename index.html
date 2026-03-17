@@ -126,12 +126,12 @@ for (let a=0; a<4; a++){
                 }
 
                 try {
-                  value = eval(`${iti} ${ikko} ( ${ni} ${niko} ${san} ( ${sanko} ${yon} ) )`);
+                  value = eval(`${iti} ${ikko} ( ${ni} ${niko} ( ${san} ${sanko} ${yon} ) )`);
                 } catch {
                   continue;
                 }
                 if (Math.abs(value - ans) < 1e-6) {
-                  const kotae = `${iti|0} ${ikko} ( ${ni|0} ${niko} ${san|0} ( ${sanko} ${yon|0} ) )`;
+                  const kotae = `${iti|0} ${ikko} ( ${ni|0} ${niko} ( ${san|0} ${sanko} ${yon|0} ) )`;
                   atta = kotaetati.includes(kotae);
                   if (!atta) {
                     kotaetati.push(kotae);
